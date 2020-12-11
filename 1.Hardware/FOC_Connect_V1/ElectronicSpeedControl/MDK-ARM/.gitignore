@@ -1,0 +1,5 @@
+*.zip
+/ElectronicSpeedControl/
+/History/
+/__Previews/
+*.PrjPcbStructure
