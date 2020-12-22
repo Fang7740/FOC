@@ -134,11 +134,11 @@
             <RunIndependent>0</RunIndependent>
             <UpdateFlashBeforeDebugging>1</UpdateFlashBeforeDebugging>
             <Capability>1</Capability>
-            <DriverSelection>-1</DriverSelection>
+            <DriverSelection>4096</DriverSelection>
           </Flash1>
           <bUseTDR>1</bUseTDR>
           <Flash2>BIN\UL2CM3.DLL</Flash2>
-          <Flash3></Flash3>
+          <Flash3>"" ()</Flash3>
           <Flash4></Flash4>
           <pFcarmOut></pFcarmOut>
           <pFcarmGrp></pFcarmGrp>
@@ -564,11 +564,6 @@
               <FilePath>..\..\Drive\C_Time.h</FilePath>
             </File>
             <File>
-              <FileName>WS2812B.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\Drive\WS2812B.c</FilePath>
-            </File>
-            <File>
               <FileName>C_ADC.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\..\Drive\C_ADC.c</FilePath>
@@ -577,6 +572,16 @@
               <FileName>C_ADC.h</FileName>
               <FileType>5</FileType>
               <FilePath>..\..\Drive\C_ADC.h</FilePath>
+            </File>
+            <File>
+              <FileName>C_PWM.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\Drive\C_PWM.c</FilePath>
+            </File>
+            <File>
+              <FileName>C_PWM.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\Drive\C_PWM.h</FilePath>
             </File>
           </Files>
         </Group>

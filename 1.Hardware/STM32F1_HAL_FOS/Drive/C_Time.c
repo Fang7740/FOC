@@ -11,7 +11,7 @@ m_time C_Time=
 
 void Time3_Init(u32 Time)
 {
-		TIM3_Handler.Instance=TIM3;                          //通用定时器3
+	TIM3_Handler.Instance=TIM3;                          //通用定时器3
     TIM3_Handler.Init.Prescaler=7200-1;                     //分频系数
     TIM3_Handler.Init.CounterMode=TIM_COUNTERMODE_UP;    //向上计数器
     TIM3_Handler.Init.Period=Time*1000-1;                        //自动装载值

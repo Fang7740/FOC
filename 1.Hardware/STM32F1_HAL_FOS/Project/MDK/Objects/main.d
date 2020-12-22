@@ -74,3 +74,4 @@
 .\objects\main.o: ..\..\APP\FS_TASK\A0_Task.h
 .\objects\main.o: ..\..\APP\FS_TASK\B0_Task.h
 .\objects\main.o: ..\..\Drive\C_ADC.h
+.\objects\main.o: ..\..\Drive\C_PWM.h

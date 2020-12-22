@@ -68,3 +68,4 @@
 .\objects\b0_task.o: ..\..\FreeRTOS\include\task.h
 .\objects\b0_task.o: ..\..\FreeRTOS\include\list.h
 .\objects\b0_task.o: ..\..\Drive\C_USART.h
+.\objects\b0_task.o: ..\..\Drive\C_PWM.h

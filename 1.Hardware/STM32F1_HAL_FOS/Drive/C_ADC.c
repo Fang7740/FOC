@@ -1,13 +1,13 @@
 #include "C_ADC.h"
 ADC_HandleTypeDef hadc1;		//ADC句柄
 DMA_HandleTypeDef hdma_adc1;
-static void MX_DMA_Init(void);
+void MX_DMA_Init_(void);
 //初始化ADC
 //ch: ADC_channels 
 //通道值 0~16取值范围为：ADC_CHANNEL_0~ADC_CHANNEL_16
 void MY_ADC_Init(void)
 { 
-		 ADC_ChannelConfTypeDef sConfig = {0};
+	ADC_ChannelConfTypeDef sConfig = {0};
 
   /* USER CODE BEGIN ADC1_Init 1 */
 
@@ -34,7 +34,7 @@ void MY_ADC_Init(void)
 		
 }
 
-void MX_DMA_Init(void)
+void MX_DMA_Init_(void)
 {
 
   /* DMA controller clock enable */
@@ -94,7 +94,6 @@ void HAL_ADC_MspInit(ADC_HandleTypeDef* hadc)
     GPIO_InitStruct.Pin = GPIO_PIN_1;
     GPIO_InitStruct.Mode = GPIO_MODE_ANALOG;
     HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
-
     /* ADC1 DMA Init */
     /* ADC1 Init */
     hdma_adc1.Instance = DMA1_Channel1;
