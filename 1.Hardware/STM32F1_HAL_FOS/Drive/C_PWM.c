@@ -124,16 +124,15 @@ void HAL_TIM_PWM_MspInit(TIM_HandleTypeDef *htim)
 }
 
 
-int D_time=100;
+int D_time=50;
 void PWM_120_Out(float PWM)
 {
     int PWM_OUT;
-    PWM_OUT=(int)(PWM*3000);
-    if(PWM_OUT>=3000)
-        PWM_OUT=3000;
+    PWM_OUT=(int)(PWM*(2000)/2);
+
     TIM2->CNT=0; 
-    TIM4->CNT=PWM_OUT+D_time;
-    TIM3->CNT=(PWM_OUT+D_time)*2;
+    TIM4->CNT=PWM_OUT/3*2;
+    TIM3->CNT=PWM_OUT/3*4;
     TIM2->CCR1=PWM_OUT;
     TIM3->CCR1=PWM_OUT; 
     TIM4->CCR1=PWM_OUT; 

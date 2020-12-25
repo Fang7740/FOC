@@ -56,17 +56,63 @@
     </rect>
    </property>
   </widget>
-  <widget class="QLabel" name="label">
+  <widget class="QPushButton" name="pushButton">
+   <property name="geometry">
+    <rect>
+     <x>520</x>
+     <y>170</y>
+     <width>51</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>发送</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lineEdit_PWM">
+   <property name="geometry">
+    <rect>
+     <x>520</x>
+     <y>140</y>
+     <width>51</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lineEdit_Speed">
    <property name="geometry">
     <rect>
      <x>160</x>
      <y>240</y>
-     <width>54</width>
-     <height>12</height>
+     <width>51</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_CLOSE">
+   <property name="geometry">
+    <rect>
+     <x>510</x>
+     <y>30</y>
+     <width>75</width>
+     <height>23</height>
     </rect>
    </property>
    <property name="text">
-    <string>-----------</string>
+    <string>关闭串口</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_PWM">
+   <property name="geometry">
+    <rect>
+     <x>470</x>
+     <y>140</y>
+     <width>51</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>设置PWM:</string>
    </property>
   </widget>
  </widget>

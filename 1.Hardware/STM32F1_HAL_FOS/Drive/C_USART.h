@@ -10,7 +10,7 @@ void USART2_SendData(char str);
 void USART3_SendData(char str);
 typedef struct
 {
-	u8 Read_BUF[66*3*3+10];
+	u8 Read_BUF[100];
 	int Read_cnt;
 	u8 Ready;
 	u8 aRxBuffer[1];

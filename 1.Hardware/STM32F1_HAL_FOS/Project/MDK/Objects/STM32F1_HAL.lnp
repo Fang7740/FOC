@@ -22,10 +22,13 @@
 ".\objects\sys.o"
 ".\objects\delay.o"
 ".\objects\c_usart.o"
-".\objects\c_time.o"
 ".\objects\c_adc.o"
 ".\objects\c_pwm.o"
+".\objects\c_key.o"
+".\objects\c_oled.o"
 ".\objects\c_send.o"
+".\objects\c_read.o"
+".\objects\oled_lib.o"
 ".\objects\queue.o"
 ".\objects\list.o"
 ".\objects\event_groups.o"
@@ -36,6 +39,8 @@
 ".\objects\heap_4.o"
 ".\objects\a0_task.o"
 ".\objects\b0_task.o"
+".\objects\c0_task.o"
+".\objects\key_task.o"
 --strict --scatter ".\Objects\STM32F1_HAL.sct"
 --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers

@@ -4,7 +4,6 @@ u8 Send_buff[20];
 m_Send C_Send=
 {
 	Send_Data,
-    Read_Data,
 };
 
 u16 DXer(u16 data)
@@ -34,8 +33,4 @@ void Send_Data(u16 ID,u8 len,u8 *dat)
   
 }
 
-void Read_Data()
-{
-
-}
 

@@ -91,10 +91,21 @@ class Ui_Form(QMainWindow):
         self.comboBox = QtWidgets.QComboBox(Form)
         self.comboBox.setGeometry(QtCore.QRect(350, 30, 69, 22))
         self.comboBox.setObjectName("comboBox")
-        self.label = QtWidgets.QLabel(Form)
-        self.label.setGeometry(QtCore.QRect(160, 240, 54, 12))
-        self.label.setObjectName("label")
-
+        self.pushButton = QtWidgets.QPushButton(Form)
+        self.pushButton.setGeometry(QtCore.QRect(520, 170, 51, 23))
+        self.pushButton.setObjectName("pushButton")
+        self.lineEdit_PWM = QtWidgets.QLineEdit(Form)
+        self.lineEdit_PWM.setGeometry(QtCore.QRect(520, 140, 51, 20))
+        self.lineEdit_PWM.setObjectName("lineEdit_PWM")
+        self.lineEdit_Speed = QtWidgets.QLineEdit(Form)
+        self.lineEdit_Speed.setGeometry(QtCore.QRect(160, 240, 51, 20))
+        self.lineEdit_Speed.setObjectName("lineEdit_Speed")
+        self.pushButton_CLOSE = QtWidgets.QPushButton(Form)
+        self.pushButton_CLOSE.setGeometry(QtCore.QRect(510, 30, 75, 23))
+        self.pushButton_CLOSE.setObjectName("pushButton_CLOSE")
+        self.label_PWM = QtWidgets.QLabel(Form)
+        self.label_PWM.setGeometry(QtCore.QRect(470, 140, 51, 16))
+        self.label_PWM.setObjectName("label_PWM")
         self.retranslateUi(Form)
         QtCore.QMetaObject.connectSlotsByName(Form)
 
@@ -102,7 +113,9 @@ class Ui_Form(QMainWindow):
         _translate = QtCore.QCoreApplication.translate
         Form.setWindowTitle(_translate("Form", "Form"))
         self.pushButton_OPEN.setText(_translate("Form", "打开串口"))
-        self.label.setText(_translate("Form", "-----------"))
+        self.pushButton.setText(_translate("Form", "发送"))
+        self.pushButton_CLOSE.setText(_translate("Form", "关闭串口"))
+        self.label_PWM.setText(_translate("Form", "设置PWM:"))
         
         self.dial.setRange(0,4000)           #设置范围
         self.dial.setNotchesVisible(True)    #设置刻度
@@ -122,9 +135,31 @@ class Ui_Form(QMainWindow):
         print('com',self.nub)
         self.comboBox.addItems(self.nub)
         self.pushButton_OPEN.clicked.connect(self.Usart_OPEN)
+        self.pushButton_CLOSE.clicked.connect(self.Usart_Close)
+        self.pushButton.clicked.connect(self.Usart_Send)
+        #构建界面
+        self.root = Tk() 
+        #隐藏TK窗口
+        self.root.withdraw() 
+    
+    def Usart_Send(self):
+
+        dat=self.lineEdit_PWM.text()
+        list=bytes.fromhex('AA 02 01') 
+        dat=int(dat)
+        data_byte = dat.to_bytes(1, byteorder='little', signed=True)
+        send_dat=list+data_byte
+        #print(send_dat)
+        self.thread.Usart_Sedn(send_dat)
+
+    def Usart_Close(self):
+        self.thread.Usart_Close()
+        self.pushButton_OPEN.setText("打开串口")
+        self.pushButton_CLOSE.setText("已关闭")
     
     def Usart_OPEN(self):
         self.pushButton_OPEN.setText("已打开")
+        self.pushButton_CLOSE.setText("关闭串口")
         com=self.comboBox.currentText()
         bit=115200
         print("打开=",com,bit)
@@ -135,18 +170,24 @@ class Ui_Form(QMainWindow):
 
     def slotAdd(self, file_inf):
         global reset_cnt,cf_cnt,dt_cnt,lbs_cnt
-        
+        #print(file_inf)
         string=file_inf.decode('utf-8','ignore')
         try:
             if(file_inf[0]==170):
                 if(file_inf[1]==1):
                     val=file_inf[3]*256+file_inf[4]
-                    if(val>=0):
-                        print(val,file_inf[5])
+                    if(val>0):
+                        #print(val,file_inf[5])
                         self.dial_2.setValue(val)
                         self.dial.setValue(val)
+                        if(file_inf[5]!=0):
+                            self.lineEdit_Speed.setText(str(file_inf[5]))
+                if(file_inf[1]==0):
+                    if(file_inf[2]==0):
+                        messagebox.showinfo("提示","设置成功")
+                    
         except:  
-            print(file_inf)
+            #print(file_inf)
             pass
         
 
@@ -161,7 +202,7 @@ class Ui_Form(QMainWindow):
             except  :
                 pass
            
-
+#STM32F10X_HD,USE_STDPERIPH_DRIVER
 
 
 

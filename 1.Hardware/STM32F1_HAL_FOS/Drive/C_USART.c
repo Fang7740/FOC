@@ -74,7 +74,7 @@ void HAL_UART_MspInit(UART_HandleTypeDef *huart)
 		
 	else if(huart->Instance == USART3)
 	{
-		__HAL_RCC_GPIOA_CLK_ENABLE();			//使能GPIOA时钟
+		__HAL_RCC_GPIOB_CLK_ENABLE();			//使能GPIOA时钟
 		__HAL_RCC_USART3_CLK_ENABLE();			//使能USART1时钟
 		__HAL_RCC_AFIO_CLK_ENABLE();
 	
@@ -88,7 +88,7 @@ void HAL_UART_MspInit(UART_HandleTypeDef *huart)
 		GPIO_Initure.Mode=GPIO_MODE_AF_INPUT;	//模式要设置为复用输入模式！	
 		HAL_GPIO_Init(GPIOB,&GPIO_Initure);	   	//初始化PA10
 		
-		#if EN_USART2_RX
+		#if EN_USART3_RX
 		HAL_NVIC_EnableIRQ(USART3_IRQn);				//使能USART1中断通道
 		HAL_NVIC_SetPriority(USART3_IRQn,3,3);			//抢占优先级3，子优先级3
 		#endif	
@@ -249,32 +249,8 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 	{
 		Res=C_USART.UART_1.aRxBuffer[0]; 
 		C_USART.UART_1.Read_BUF[C_USART.UART_1.Read_cnt]=Res;
-		if(C_USART.UART_1.Read_BUF[C_USART.UART_1.Read_cnt-1]==0x0D&&C_USART.UART_1.Read_BUF[C_USART.UART_1.Read_cnt]==0X0A)
-		{
-			//printf("over:%d\r\n",cnt);
-			C_USART.UART_1.Ready=1;
-		}
 		C_USART.UART_1.Read_cnt++;
-		/*
-		Res=C_USART.UART_1.aRxBuffer[0]; 
-		if(cnt>=3)
-		{
-			cnt=0;
-			C_USART.UART_1.Read_BUF[C_USART.UART_1.Read_cnt]=buff[0]<<8*2|buff[1]<<8*1|buff[2];
-			//printf("STR[%d]=%X\r\n",C_USART.UART_1.Read_cnt,C_USART.UART_1.Read_BUF[C_USART.UART_1.Read_cnt]);
-			C_USART.UART_1.Read_cnt++;
-		}
-		buff[cnt]=Res;
-		//USART1->DR=buff[cnt];
-		USART1->DR=Res;
-		if(buff[cnt-1]==0x0D&&buff[cnt]==0X0A)
-		{
-			//printf("over:%d\r\n",cnt);
-			cnt=0;
-			C_USART.UART_1.Ready=1;
-		}
-		cnt++;
-		*/
+		USART3->DR=Res;
 	}
 	
 	else if(huart->Instance==USART2)//如果是串口3

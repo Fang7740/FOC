@@ -71,3 +71,4 @@
 .\objects\a0_task.o: ..\..\Drive\C_ADC.h
 .\objects\a0_task.o: ..\..\SYSTEM\delay\delay.h
 .\objects\a0_task.o: ..\..\APP\C_Send.h
+.\objects\a0_task.o: ..\..\Drive\C_OLED.h

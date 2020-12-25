@@ -73,5 +73,9 @@
 .\objects\main.o: ..\..\FreeRTOS\include\list.h
 .\objects\main.o: ..\..\APP\FS_TASK\A0_Task.h
 .\objects\main.o: ..\..\APP\FS_TASK\B0_Task.h
+.\objects\main.o: ..\..\APP\FS_TASK\C0_Task.h
+.\objects\main.o: ..\..\APP\FS_TASK\KEY_Task.h
+.\objects\main.o: ..\..\Drive\C_KEY.h
 .\objects\main.o: ..\..\Drive\C_ADC.h
 .\objects\main.o: ..\..\Drive\C_PWM.h
+.\objects\main.o: ..\..\Drive\C_OLED.h

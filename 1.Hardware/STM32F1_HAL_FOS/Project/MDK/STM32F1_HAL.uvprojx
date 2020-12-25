@@ -554,16 +554,6 @@
               <FilePath>..\..\Drive\C_USART.h</FilePath>
             </File>
             <File>
-              <FileName>C_Time.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\Drive\C_Time.c</FilePath>
-            </File>
-            <File>
-              <FileName>C_Time.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\..\Drive\C_Time.h</FilePath>
-            </File>
-            <File>
               <FileName>C_ADC.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\..\Drive\C_ADC.c</FilePath>
@@ -583,6 +573,26 @@
               <FileType>5</FileType>
               <FilePath>..\..\Drive\C_PWM.h</FilePath>
             </File>
+            <File>
+              <FileName>C_KEY.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\Drive\C_KEY.c</FilePath>
+            </File>
+            <File>
+              <FileName>C_KEY.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\Drive\C_KEY.h</FilePath>
+            </File>
+            <File>
+              <FileName>C_OLED.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\Drive\C_OLED.c</FilePath>
+            </File>
+            <File>
+              <FileName>C_OLED.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\Drive\C_OLED.h</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -597,6 +607,26 @@
               <FileName>C_Send.h</FileName>
               <FileType>5</FileType>
               <FilePath>..\..\APP\C_Send.h</FilePath>
+            </File>
+            <File>
+              <FileName>C_Read.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\APP\C_Read.c</FilePath>
+            </File>
+            <File>
+              <FileName>C_Read.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\APP\C_Read.h</FilePath>
+            </File>
+            <File>
+              <FileName>oled_lib.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\APP\oled_lib.h</FilePath>
+            </File>
+            <File>
+              <FileName>oled_lib.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\APP\oled_lib.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -677,6 +707,26 @@
               <FileName>B0_Task.h</FileName>
               <FileType>5</FileType>
               <FilePath>..\..\APP\FS_TASK\B0_Task.h</FilePath>
+            </File>
+            <File>
+              <FileName>C0_Task.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\APP\FS_TASK\C0_Task.c</FilePath>
+            </File>
+            <File>
+              <FileName>C0_Task.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\APP\FS_TASK\C0_Task.h</FilePath>
+            </File>
+            <File>
+              <FileName>KEY_Task.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\APP\FS_TASK\KEY_Task.c</FilePath>
+            </File>
+            <File>
+              <FileName>KEY_Task.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\APP\FS_TASK\KEY_Task.h</FilePath>
             </File>
           </Files>
         </Group>
